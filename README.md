@@ -260,4 +260,14 @@ shared data를 사용하려고 봤는데 shared data가 없으면 그럼 기다�
 그런데 만약 shared datar가 0 이면 남은게 하나도 없다는 뜻이니깐 기다려야 한다고해서 wait이다.
 
 
+다 쓰고 나서는 세마포어 값을 +1 시켜주면 된다 내가 다 쓴 이 shared data를 누군구가 기다릴 수 있다. 그래서 그 기다릴 사람에게 신호를 보내줘야 하므로 이름이 signal.
+
+
+[wait]
+<img width="855" alt="Screenshot 2022-05-22 at 14 50 30" src="https://user-images.githubusercontent.com/84698855/169698420-4e89361c-bce2-46f4-b370-95de05cf48bb.png">
+
+[signal]
+<img width="862" alt="Screenshot 2022-05-22 at 14 50 52" src="https://user-images.githubusercontent.com/84698855/169698437-a4210186-b58e-46ee-9994-0685fbd58a56.png">
+
+
 
