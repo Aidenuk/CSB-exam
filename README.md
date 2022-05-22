@@ -181,7 +181,18 @@ ex) 철수의 공개키 & 영희의 비밀키를 DH연산을 통해서 영희의
 * XSS (Cross Site Scripting) [Reflective / Stored(Persistant] 
 해커가 웹사이트에 악성 스크립트를 등록 -> 웹서비스는 이를 DB에 저장 -> User는 이 악성스크립트를 읽음 -> 악성 스크립트가 User Pc에서 실행 => 유저를 공격 
 
-1) Reflective : 
+1) Reflective : 보통 URL 파라미터 특히 get방식에 스크립트를 넣어 서버에 저장하지 않고 즉시 스크립트를 만듬 공격자는 스크립트 삽입시 실행이 되는 취약점이 존재하는 페이지를 미리 탐색한 후 XSS공격을 위한 스크립트가 포함된 URL을 공격 대상자에게 노출 시키는 방법으로 수행. (유저) 
+
+2) Stored / Persistant : 웹사이트의 게시판이나 댓글, 닉네임등 스크립트가 서버에 저장되어 실행되는 방식
+공격자는 게시판에 스크립트를 삽입한 후 공격 대상자가 해당 게시글을 클릭 하도록 유도 
+
+3) 두 공격의 차이점 : reflective (attacker has to find individual vicitims and send her/him the malicious link)
+                  stored (All attacker has to do is to just poison the server. 
+                  
+                  
+********************************************************************************************************************************************************                 
+
+*Week04 Network Security
 
 
 
