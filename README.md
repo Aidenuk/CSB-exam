@@ -290,5 +290,53 @@ shared data를 사용하려고 봤는데 shared data가 없으면 그럼 기다�
 
 
 
+********************************************************************************************************************************************************
+
+*Week07 Scheduling 
+
+*Cpu 스케쥴러 -> 다중 프로그램 os 기본으로, 여러 프로세스들이 cpu를 교환하여 보다 생산적으로 동작.
+cpu를 선정한 프로세스가 대기하는 시간을 보다 효율적으로 사용하기 위해서. 
+
+일반적인 시스템에서는 다음과 같은 목적을 공통으로 지닌다. 
+1) no starvation (굶주림현상) : 각각의 프로세스들이 오랜시간 동안 cpu를 할당받지 못하는 상황이 없도록 한다.
+2) Fairness : 각각의 프로세스들이 공평하게 cpu를 할당.
+3) Balance : Keeping all parts of the system busy.
+
+
+* 비선점 스케쥴링 / 선점 스케쥴링 
+
+비선점 : 이미 할당된 자원을 다른 프로세스가 빼앗을 수 없는 방식. 
+선점 : timeslice가 소진되었거나 I/O interupt, systemcall 이 발생되면 현 실행 프로세스로 부터 강제로 cpu를 회수하여 프로세스를 스위칭 하는 방식. 
+
+
+
+(1) FCFS (First come Fitst served) [비선점 스케쥴링 Non- preemtive scheduling]
+-> 먼저 cpu를 요청하는 프로세스를 먼저 처리하는 방식 (cpu를 요청하는 프로세스의 burst time 에 따라 평균 waiting time 이 bad)
+
+(2) SJF (Shortest job first) [선점 스케쥴링 preemitive scheduling]
+-> 평균 waiting time을 최소화 하기 위해 사용하는 방식 (burst time이 짧은 프로세스부터 CPU를 할당)
+
+문제점) waiting time 을 최소화 하는데 최적이지만, burst time이 긴 프로세스는 오랜시간동안 굶주려야 하므로 no starvation 을 위반한다. 
+
+
+(3) SRTF (Shortest remaining time first) 
+-> 최단 잔여시간을 우선하는 스케쥴링 진행중인 프로세스가 있어도 최단잔여 시간인 프로세스를 위해 sleep시키고 짧은 프로세스를 먼저 할당. 
+
+(4) RR (Roubine Round) 
+-> Time sharing system을 위해 설계된 스케쥴링. 모든 프로세스가 같은 우선순위를 가지고 time-slice 기반으로 스케쥴링 time slice burst 가 일어나면 해당 프로세스는 스케쥴링 큐의 끝으로 이동
+
+time-slice 가 큰 경우 : FCFS 와 비슷 
+           가 작은 경우: 문맥교환이 많이 일어남 (비효율)
+           
+           
+           
+* 쓰레드_ yield -> 실행 중 우선순위 동일한 다른 스레드에게 실행을 양보하고 실행 대기 상태가 됨.
+
+         
+           
+* MLFQ 기본 규칙 
+
+
+
 
 
