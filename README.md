@@ -362,5 +362,17 @@ MLFQ 스케쥴링 핵심은 우선순위를 정하는 방식이다. 각 작업�
 *Week09 OS security
 
 *MAC [ Mandatory access controls ]
--> 미리 
+-> 미리 정해진 정책과 보안 등급에 의거하여 주체에게 허용된 접근 권한과 객체에게 부여된 허용등급을 비교하여 접근을 통제하는 모델.
+높은 보안을 요구하는 정보는 낮은 보안 수준의 주체가 접근할 수 없으며 소유자라고 할지라도 정책에 어긋나면 접근할 수 없으므로 강력한 보안을 제공.
 
+*DAC [ Discretionary Access Control ]
+-> 접근 주체 신분기반 접근권한 부여.
+
+
+<img width="461" alt="Screenshot 2022-05-24 at 11 57 46" src="https://user-images.githubusercontent.com/84698855/170019389-2ff348cc-7e6b-4ee1-9730-b3ec00ee100b.png">
+
+
+
+* Segmentation 
+
+먼저 어떤 프로세스에 대해 액세스해도 좋은 메모리 범위(세그먼트)를 정한다. 이는 해당 메모리의 시작 주소 크기 권한을 포함하고 있다. 이런 각 세그먼트에 관한 정보를 segment descriptor 라고 하며, 
